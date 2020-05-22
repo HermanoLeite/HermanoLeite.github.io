@@ -15,7 +15,7 @@ body {
     height: 200px;
     width: 400px;
     background-color: white;
-    opacity: .8;
+    opacity: .9;
     clip-path: polygon(7% 23%, 10% 16%, 19% 11%, 25% 14%, 33% 16%, 38% 21%, 44% 19%, 48% 13%, 54% 9%, 61% 9%, 69% 9%, 77% 11%, 81% 16%, 86% 13%, 92% 19%, 94% 25%, 95% 32%, 95% 39%, 94% 46%, 92% 54%, 88% 60%, 80% 61%, 70% 61%, 63% 61%, 55% 56%, 49% 56%, 43% 60%, 36% 64%, 28% 68%, 18% 68%, 11% 63%, 7% 59%, 3% 51%, 1% 41%, 1% 32%, 1% 28%);
     transform: translate(-20em,0);
 }
@@ -49,6 +49,31 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: rgb(2, 2, 74);
+    position: relative;
+    overflow: hidden;
+}
+
+#moon i {
+    font-size: 200px;
+    margin-left: 200px;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.star {
+    color: whitesmoke;
+    font-size: 20px;
+    position: absolute;
+}
+
+.little-star {
+    color: whitesmoke;
+    position: absolute;
+    font-size: 10px;
+}
+
+.little-star i:hover,.star i:hover {
+    text-shadow: 0 0 0.4em white;
 }
 
 .body-to-bottom {
