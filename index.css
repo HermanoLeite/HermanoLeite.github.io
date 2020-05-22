@@ -73,7 +73,7 @@ body {
 }
 
 .little-star i:hover,.star i:hover {
-    text-shadow: 0 0 0.4em white;
+    text-shadow: 0 0 0.4em rgb(255, 247, 4);
 }
 
 .body-to-bottom {
