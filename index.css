@@ -53,27 +53,16 @@ body {
     overflow: hidden;
 }
 
-#moon i {
-    font-size: 200px;
+.moon {
+    position: absolute;
+    bottom: 200px;
+}
+
+.moon i {
+    font-size: 100px;
     margin-left: 200px;
     color: whitesmoke;
     overflow: hidden;
-}
-
-.star {
-    color: whitesmoke;
-    font-size: 20px;
-    position: absolute;
-}
-
-.little-star {
-    color: whitesmoke;
-    position: absolute;
-    font-size: 10px;
-}
-
-.little-star i:hover,.star i:hover {
-    text-shadow: 0 0 0.4em rgb(255, 247, 4);
 }
 
 .body-to-bottom {
