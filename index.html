@@ -16,15 +16,16 @@
         <div class="cloud-to-right"></div>
         <div class="cloud-to-left"></div>
     </header>
-    <div class="header-to-body"></div>
 
+    <div class="header-to-body"></div>
     <section class="body-1">
         <div id="particles-js">
-            <div class="moon" id="moon"><i class="fas fa-moon"></i></div>
+            <div class="moon" id="moon"></div>
         </div>
     </section>
 
     <div class="body-to-bottom"></div>
+
 
     <div class="bottom">
         <a href="https://github.com/HermanoLeite" target="_blanket">
@@ -37,22 +38,9 @@
 
 <script src="particles.js"></script>
 <script>
-    // particlesJS.load('particles-js', 'particles.json', function () {
-    //     console.log('callback - particles.js config loaded');
-    // });
-    // sky = document.getElementById('sky')
-    // sky.innerHTML += "<div class=\"star\"><i class=\"fas fa-star\"></i></div> <div class=\"little-star\"><i class=\"fas fa-star\"></i></div>"
-    // moon = document.getElementById('moon')
-    // for (var i = 0; i < 300; i++) {
-    //     var random1 = Math.floor(Math.random() * Math.floor(1000))
-    //     var random2 = Math.floor(Math.random() * Math.floor(100))
-    //     var randomlittle1 = Math.floor(Math.random() * Math.floor(100))
-    //     var randomlittle2 = Math.floor(Math.random() * Math.floor(100))
-    //     sky.innerHTML += "<div class=\"star\" style=\"left:" + random1 * i + "px;top:" + random2 * i + "px;\"><i class=\"fas fa-star\"></i></div> <div class=\"little-star\" style=\"left:" + randomlittle1 * i + "px;top:" + randomlittle2 * i + "px;\"><i class=\"fas fa-star\"></i></div>"
-    // }
-
+    startMovingPoint = -200
     window.addEventListener('scroll', (event) => {
-        if (moon.getBoundingClientRect().top > -200 && moon.getBoundingClientRect().top < 1000) {
+        if (moon.getBoundingClientRect().top > startMovingPoint && moon.getBoundingClientRect().top < 1000) {
             moon.style.transform = "translatex(" + moon.getBoundingClientRect().top + "px)";
         }
     })
