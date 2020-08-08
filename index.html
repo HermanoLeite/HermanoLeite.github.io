@@ -38,6 +38,9 @@
 
 <script src="particles.js"></script>
 <script>
+    window.onload = function () {
+        window.location.href = "#particles-js";
+    }
     startMovingPoint = -200
     window.addEventListener('scroll', (event) => {
         if (moon.getBoundingClientRect().top > startMovingPoint && moon.getBoundingClientRect().top < 1000) {
