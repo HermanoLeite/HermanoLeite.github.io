@@ -7,6 +7,7 @@
     <title>Hermano Leite</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='spaceship.css'>
     <script src="https://kit.fontawesome.com/01ca91c098.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
@@ -19,17 +20,61 @@
         <div class="cloud-left" id="cloud-mid"></div>
         <div class="cloud-left" id="cloud-front"></div>
 
+        <!-- cloud svg -->
+        <svg width="0" height="0">
+            <filter id="filter-base">
+                <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="5" seed="9843" />
+                <feDisplacementMap in="SourceGraphic" scale="120" />
+            </filter>
+            <filter id="filter-back">
+                <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="9843" />
+                <feDisplacementMap in="SourceGraphic" scale="120" />
+            </filter>
+            <filter id="filter-mid">
+                <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="9843" />
+                <feDisplacementMap in="SourceGraphic" scale="120" />
+            </filter>
+            <filter id="filter-front">
+                <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="9843" />
+                <feDisplacementMap in="SourceGraphic" scale="50" />
+            </filter>
+        </svg>
     </header>
 
     <div class="header-to-body"></div>
 
     <section id="particles-js" class="starry-sky">
-        <div class="moon" id="moon"></div>
+        <div class="moon" id="moon" onclick="openArticles()"></div>
     </section>
 
-    <div class="body-to-bottom"></div>
+    <div class="body-to-bottom">
+        <div class="rocket">
+            <div class="fuselage">
+                <div class="nose"></div>
+                <div class="head">
+                    <span class="window"></span>
+                </div>
+                <div class="neck"></div>
+                <div class="body"></div>
+                <div class="reactor"></div>
+                <div class="fire">
+                    <div class="spark1"></div>
+                    <div class="spark2"></div>
+                    <div class="spark3"></div>
+                    <div class="spark4"></div>
+                    <div class="spark5"></div>
+                    <div class="spark6"></div>
+                </div>
+            </div>
+            <div class="left-fin"></div>
+            <div class="left-fin-end"></div>
+            <div class="right-fin"></div>
+            <div class="right-fin-end"></div>
+        </div>
+    </div>
 
     <div class="bottom">
+
         <div class="bottom-in">
             <a id="git" href="https://github.com/HermanoLeite" target="_blanket">
                 <i class="fab fa-github"></i>
@@ -37,31 +82,15 @@
         </div>
     </div>
 </body>
-<!-- cloud svg -->
-<svg width="0" height="0">
-    <filter id="filter-base">
-        <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="5" seed="9843" />
-        <feDisplacementMap in="SourceGraphic" scale="120" />
-    </filter>
-    <filter id="filter-back">
-        <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="9843" />
-        <feDisplacementMap in="SourceGraphic" scale="120" />
-    </filter>
-    <filter id="filter-mid">
-        <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="9843" />
-        <feDisplacementMap in="SourceGraphic" scale="120" />
-    </filter>
-    <filter id="filter-front">
-        <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="9843" />
-        <feDisplacementMap in="SourceGraphic" scale="50" />
-    </filter>
-</svg>
 
 </html>
 
 
 <script src="particles.js"></script>
 <script>
+    function openArticles() {
+        window.open('https://hplleite.medium.com/', '_blank');
+    }
     startMovingPoint = -200
     window.addEventListener('scroll', (event) => {
         if (moon.getBoundingClientRect().top > startMovingPoint && moon.getBoundingClientRect().top < 1000) {
