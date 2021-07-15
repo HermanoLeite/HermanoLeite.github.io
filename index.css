@@ -10,6 +10,14 @@ body {
         height: 40vh;
         width: 100vw;
         background-color: rgb(90, 225, 249);
+        cursor: pointer;
+    }
+
+    .quote {
+        display: none;
+        padding-top: 100px;
+        color: rgb(52, 46, 46);
+        font-family: Verdana, Geneva, Tahoma, sans-serif
     }
 
     .cloud-left {
@@ -61,20 +69,20 @@ body {
         box-shadow: 210px 272px 30px 0px rgba(0, 0, 0, 0.4);
     }
 
-    .header:hover .cloud-left {
-        transition: 100s;
-        transform: translate(40em,-20em) scale(2, 2);
-    }
-    
-    .header:hover .cloud-right {
-        transition: 200s;
-        transform: translate(-100em,0);
-    }
-
     .header-to-body {
         height: 100vh;
         width: 100vw;
         background: linear-gradient(to bottom, rgba(90,225,249,1) 0%, rgb(2, 2, 74) 100%);
+    }
+
+    .top:hover .cloud-left {
+        transition: 100s;
+        transform: translate(40em,-20em) scale(2, 2);
+    }
+    
+    .top:hover .cloud-right {
+        transition: 200s;
+        transform: translate(-100em,0);
     }
     
 }

@@ -13,36 +13,40 @@
 </head>
 
 <body>
-    <header class="header">
+    <div class='top'>
+        <header class="header">
+            <div class="quote" id="quote">Olá! :)</div>
 
-        <div class="cloud-left" id="cloud-base"></div>
-        <div class="cloud-left" id="cloud-back"></div>
-        <div class="cloud-left" id="cloud-mid"></div>
-        <div class="cloud-left" id="cloud-front"></div>
+            <div class="cloud">
+                <div class="cloud-left" id="cloud-base" onmouseover="showGreetings()"></div>
+                <div class="cloud-left" id="cloud-back"></div>
+                <div class=" cloud-left" id="cloud-mid"></div>
+                <div class=" cloud-left" id="cloud-front"></div>
+            </div>
 
-        <!-- cloud svg -->
-        <svg width="0" height="0">
-            <filter id="filter-base">
-                <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="5" seed="9843" />
-                <feDisplacementMap in="SourceGraphic" scale="120" />
-            </filter>
-            <filter id="filter-back">
-                <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="9843" />
-                <feDisplacementMap in="SourceGraphic" scale="120" />
-            </filter>
-            <filter id="filter-mid">
-                <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="9843" />
-                <feDisplacementMap in="SourceGraphic" scale="120" />
-            </filter>
-            <filter id="filter-front">
-                <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="9843" />
-                <feDisplacementMap in="SourceGraphic" scale="50" />
-            </filter>
-        </svg>
-    </header>
+            <!-- cloud svg -->
+            <svg width="0" height="0">
+                <filter id="filter-base">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="5" seed="9843" />
+                    <feDisplacementMap in="SourceGraphic" scale="120" />
+                </filter>
+                <filter id="filter-back">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="9843" />
+                    <feDisplacementMap in="SourceGraphic" scale="120" />
+                </filter>
+                <filter id="filter-mid">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="9843" />
+                    <feDisplacementMap in="SourceGraphic" scale="120" />
+                </filter>
+                <filter id="filter-front">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="9843" />
+                    <feDisplacementMap in="SourceGraphic" scale="50" />
+                </filter>
+            </svg>
+        </header>
 
-    <div class="header-to-body"></div>
-
+        <div class="header-to-body"></div>
+    </div>
     <section id="particles-js" class="starry-sky">
         <div class="moon" id="moon" onclick="openArticles()"></div>
     </section>
@@ -88,9 +92,15 @@
 
 <script src="particles.js"></script>
 <script>
+
+    function showGreetings() {
+        document.getElementById("quote").style.display = 'block'
+    }
+
     function openArticles() {
         window.open('https://hplleite.medium.com/', '_blank');
     }
+
     startMovingPoint = -200
     window.addEventListener('scroll', (event) => {
         if (moon.getBoundingClientRect().top > startMovingPoint && moon.getBoundingClientRect().top < 1000) {
